@@ -24,7 +24,7 @@ class DataIngestion():
             df=pd.read_csv(os.path.join('notebooks/data/','gemstone.csv'))
             logging.info('Dataset read as pandas Dataframe')
             
-            os.makedirs(os.path.join(self.ingestion_config.raw_path),exist_ok=True)
+            os.makedirs(os.path.dirname(self.ingestion_config.raw_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_path,index=False)
             
             logging.info('Raw data is created')
@@ -40,7 +40,7 @@ class DataIngestion():
                 self.ingestion_config.train_path,
                 self.ingestion_config.test_path
             )
-                
+            
         except Exception as e:
             logging.info('Exception occured at Data Ingestion Stage')
             raise CustomException(e,sys)
