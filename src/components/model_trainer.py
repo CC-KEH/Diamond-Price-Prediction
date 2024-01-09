@@ -46,6 +46,12 @@ class ModelTrainer:
             best_model_name = list(model_report.keys())[list(model_report.values()).index(best_model_score)]
             best_model = models[best_model_name]
             
+            print('\n==========================================================================')
+            print(f'Best Model Found, Model Name: {best_model_name} R2 Score : {best_model_score}')
+            print('\n==========================================================================') 
+            logging.info(f'Best Model Found, Model Name: {best_model_name} R2 Score : {best_model_score}') 
+            
+            save_object(file_path=ModelTrainerConfig.trained_model_path,obj=best_model)
         except Exception as e:
             raise CustomException(e,sys)
 
