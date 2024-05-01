@@ -13,7 +13,7 @@ import os
 from dataclasses import dataclass 
 
 @dataclass 
-class DataTransformerConfig(self):
+class DataTransformerConfig:
     preprocessor_obj_file_path = os.path.join('artifacts','preprocessor.pkl')
 
 
@@ -23,7 +23,7 @@ class DataTranformation:
         self.data_transformation_config = DataTransformerConfig()
     def get_data_tranformation_object(self):
         try:
-            loggin.info('Data Transformation Initiated')
+            logging.info('Data Transformation Initiated')
 
             # categorical_cols and numerical_cols
             categorical_cols = ['cut','color','clarity']
@@ -71,7 +71,7 @@ class DataTranformation:
             logging.info(f'Train data: \n {train_df.head().to_string()}')
             logging.info(f'Test data: \n {test_df.head().to_string()}')
 
-            loggin.info('Obtaining preprocessor object')
+            logging.info('Obtaining preprocessor object')
 
             preprocessor_obj = self.get_data_tranformation_object()
 

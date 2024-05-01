@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Form</title>
+</head>
+<body>
+    <h1>Prediction Form</h1>
+    <form action="/predict" method="post">
+        <label for="carat">Carat:</label><br>
+        <input type="text" id="carat" name="carat"><br>
+        <label for="depth">Depth:</label><br>
+        <input type="text" id="depth" name="depth"><br>
+        <label for="table">Table:</label><br>
+        <input type="text" id="table" name="table"><br>
+        <label for="x">X:</label><br>
+        <input type="text" id="x" name="x"><br>
+        <label for="y">Y:</label><br>
+        <input type="text" id="y" name="y"><br>
+        <label for="z">Z:</label><br>
+        <input type="text" id="z" name="z"><br>
+        <label for="cut">Cut:</label><br>
+        <input type="text" id="cut" name="cut"><br>
+        <label for="clarity">Clarity:</label><br>
+        <input type="text" id="clarity" name="clarity"><br>
+        <label for="color">Color:</label><br>
+        <input type="text" id="color" name="color"><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if final_result %}
+        <h2>Prediction: {{ final_result }}</h2>
+    {% endif %}
+</body>
+</html>

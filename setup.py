@@ -9,7 +9,7 @@ def get_requirements(file_path:str)->List[str]:
         return requirements
 
 setup(
-    name='Diamond_Price_Prediction',
+    name='src',
     description='',
     author='C.C-KEH',
     version='0.0.1',
