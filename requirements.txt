@@ -1,7 +1,0 @@
-# Python Version 3.8
-pandas
-numpy
-scikit-learn
-seaborn
-matplotlib
-flask
