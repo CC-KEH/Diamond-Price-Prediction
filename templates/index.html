@@ -2,9 +2,43 @@
 <html>
 <head>
     <title>Home Page</title>
+    <style>
+        body{
+            background-image: url('{{ url_for("static", filename="images/diamonds.jpg") }}');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            align-items: center;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.455);
+            border-radius: 10px;
+            margin: 15% auto;
+            padding: 10px 20px;
+            width: 30%;
+        }
+        .button{
+            background-color: rgb(127, 70, 14);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to our prediction service!</h1>
-    <p>To make a prediction, please <a href="/predict">click here</a> to fill out the form.</p>
+    <div class="container">
+    <h1>Diamond Price Prediction</h1>
+    <p>We use expertise from American Gem Society</p>
+    <p>To deliver you the best possible service.</p>
+    <div class="button"><a style="text-decoration: none; color: white;" href="/predict">Predict</a></div>
+</div>
 </body>
 </html>

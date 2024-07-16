@@ -75,16 +75,15 @@ class DataTranformation:
 
             preprocessor_obj = self.get_data_tranformation_object()
 
-            target_col = 'price'
-            drop_col = [target_col,'id','depth','x','y','z']
-
+            drop_col = ['price','id','depth','x','y','z']
+            
             # Dividing dataset into dependent and independent features
             input_feature_train_df = train_df.drop(columns=drop_col,axis=1)
-            target_feature_train_df = train_df[target_col]
+            target_feature_train_df = train_df['price']
             
             # Test data 
             input_feature_test_df = test_df.drop(columns=drop_col,axis=1)
-            target_feature_test_df = test_df[target_col]
+            target_feature_test_df = test_df['price']
             
             # Data Tranformation
             input_feature_train_array = preprocessor_obj.fit_transform(input_feature_train_df)
@@ -94,7 +93,6 @@ class DataTranformation:
             test_array = np.c_[input_feature_test_array,np.array(target_feature_test_df)]
             
             logging.info('Transformed Data Successfully')
-
 
             save_object(file_path = self.data_transformation_config.preprocessor_obj_file_path,obj=preprocessor_obj)
 

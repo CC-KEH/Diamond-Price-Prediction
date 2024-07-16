@@ -1,6 +1,7 @@
 from flask import Flask,request,render_template,jsonify
+from src.pipelines import training_pipeline
 from src.pipelines.prediction_pipeline import CustomData,PredictionPipeline
-
+from src.pipelines.training_pipeline import trigger_pipeline
 
 application = Flask(__name__)
 app = application
@@ -9,6 +10,10 @@ app = application
 def home_page():
     return render_template('index.html')
 
+@app.route('/train',methods=['GET'])
+def train_model():
+    trigger_pipeline()
+    return render_template('train.html',training_status="Training Completed")
 
 @app.route('/predict',methods=['GET','POST'])
 def predict_datapoint():
@@ -37,4 +42,4 @@ def predict_datapoint():
     
 
 if __name__=="__main__":
-    app.run(host='127.0.0.1',debug=True,port=5004)
+    app.run(host="0.0.0.0",port=8000,debug=True)

@@ -1,5 +1,7 @@
 # Diamond Price Prediction
 
+![Diamonds](images/main.png)
+
 ## Project Overview
 
 The Diamond Price Prediction project aims to develop a machine learning model to predict the price of diamonds based on various features such as carat, cut, color, clarity, and other physical attributes. This project demonstrates the application of regression techniques and data preprocessing methods to build an accurate predictive model.
